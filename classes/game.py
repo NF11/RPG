@@ -35,3 +35,38 @@ class Person:
         if self.hp <= 0:
             self.hp = 0
         return self.hp
+
+    def get_hp(self):
+        return self.hp
+
+    def get_max_hp(self):
+        return self.max_hp
+
+    def get_mp(self):
+        return self.mp
+
+    def get_max_mp(self):
+        return self.max_mp
+
+    def set_reduce_mp(self, cost):
+        self.mp -= cost
+
+    def get_spell_name(self, index):
+        return self.magic[index]["name"]
+
+    def get_spell_cost(self, index):
+        return self.magic[index]["cost"]
+
+    def choose_action(self):
+        index = 1
+        print("action : ")
+        for item in self.action:
+            print(str(index) + " : ", item)
+            index += 1
+
+    def choose_magic(self):
+        print("magic : ")
+        index = 1
+        for item in self.magic:
+            print(str(index) + " : ", item["name"], "(cost : ", str(item["mp"]) + ")")
+            index += 1
