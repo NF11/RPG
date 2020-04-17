@@ -26,3 +26,12 @@ class Person:
 
     def generate_damage(self):
         return random.randrange(self.atk_l, self.atk_h)
+
+    def generate_spell_damage(self, index):
+        return random.randrange(self.magic[index]["dmg"] - 5, self.magic[index]["dmg"] + 5)
+
+    def take_damage(self, dmg):
+        self.hp -= dmg
+        if self.hp <= 0:
+            self.hp = 0
+        return self.hp
